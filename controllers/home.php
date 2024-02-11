@@ -9,4 +9,7 @@ $db = new Database($config);
 //fetch data with a query
 $listings = $db->query('SELECT * FROM listings LIMIT 6')->fetchAll();
 
-loadView('home');
+//make the listing variable accessible in view
+loadView('home',[
+    'listings' => $listings
+]);
