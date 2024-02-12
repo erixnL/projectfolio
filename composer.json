@@ -1,0 +1,16 @@
+{
+    "name": "erixnl/projectfolio",
+    "description": "Job Listing application",
+    "author": [
+        {
+            "name": "Erin L",
+            "email": "erinl@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}

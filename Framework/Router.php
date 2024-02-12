@@ -1,5 +1,7 @@
 <?php
 
+namespace Framework;
+
 class Router {
     //don't need to access outside the class
     //url, method and controller are going into the array
@@ -87,7 +89,7 @@ class Router {
       public function route($uri, $method) {
         foreach($this->routes as $route) {
             if($route['uri'] === $uri && $route['method'] === $method) {
-                require basePath(($route['controller']));
+                require basePath(('App/'. $route['controller']));
                 return;
             }
         }

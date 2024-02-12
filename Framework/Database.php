@@ -1,5 +1,14 @@
 <?php
 
+//namespace is the prefix of the code
+namespace Framework;
+
+use PDO;
+
+use PDOException;
+
+use Exception;
+
 class Database {
     //connection
     public $conn;
