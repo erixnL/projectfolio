@@ -21,7 +21,7 @@ class ListingController {
         $listings = $this->db->query('SELECT * FROM listings')->fetchAll();
 
         //make the listing variable accessible in view
-        loadView('home',[
+        loadView('listings/index',[
             'listings' => $listings
         ]);
     }
@@ -29,16 +29,20 @@ class ListingController {
     public function create() {
         loadView('listings/create');
     }
-    
-    public function show() {
-        $id = $_GET['id'] ?? '';
+
+    public function show($params) {
+        $id = $params['id'] ?? '';
 
         $params = [
             'id' => $id
         ];
 
         $listing = $this->db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
-
+        //check if the listing exits
+        if(!$listing) {
+            ErrorController::notFound('Listing not found.');
+            return;
+        }
 
         loadView('listings/show', [
             'listing' => $listing

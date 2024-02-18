@@ -23,7 +23,5 @@ $routes = require basePath('routes.php');
 //extract the path component from the URL, ?id= is the query string
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-$method = $_SERVER['REQUEST_METHOD'];
-
 //route the request
-$router->route($uri, $method);
+$router->route($uri);
