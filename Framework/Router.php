@@ -84,6 +84,12 @@ class Router {
       public function route($uri) {
         $requestMethod = $_SERVER['REQUEST_METHOD'];
 
+        //check for _method input
+        if ($requestMethod === 'POST' && isset($_POST['_method'])) {
+            // Override the request method with the value of _method
+            $requestMethod = strtoupper($_POST['_method']);
+        }
+
         foreach($this->routes as $route) {
             // Split the current URI into segments
             $uriSegments = explode('/', trim($uri, '/'));
@@ -104,6 +110,7 @@ class Router {
                         break;
                     }
                     //check for the param and add to $params array
+                    // $matches stores what matching the regular expression, which is {id} in the matches, to get what really in the {} using $matches[1]
                     if (preg_match('/\{(.+?)\}/', $routeSegments[$i], $matches)) {
                         $params[$matches[1]] = $uriSegments[$i];
                     }
