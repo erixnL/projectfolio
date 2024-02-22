@@ -11,7 +11,7 @@
           <?php if(isset($keywords)) : ?>
             Search Results for: <?= htmlspecialchars($keywords) ?>
           <?php else : ?>
-            All Jobs
+            All projects
           <?php endif; ?>
         </div>
         <?= loadPartial('message') ?>
