@@ -64,7 +64,7 @@ class ListingController {
      */
     public function store () {
         //all the data should be get in $_POST super global 
-        $allowedFields = ['title', 'description', 'salary', 'tags', 'company', 'address', 'city',
+        $allowedFields = ['title', 'description', 'tech_stack', 'contact', 'tags', 'company', 'address', 'city',
         'state', 'phone', 'email', 'requirements', 'benefits'];
         //takes in two arrays and return a new array as long as the keys are in both arrays
         //array flip reverse the values to be keys and keys to be values
@@ -73,7 +73,7 @@ class ListingController {
         //run sanitize function on every item
         $newListingData = array_map('sanitize', $newListingData);
 
-        $requireFields = ['title', 'description', 'salary','email', 'city', 'state'];
+        $requireFields = ['title', 'description','contact'];
 
         $errors = [];
         
@@ -208,7 +208,7 @@ class ListingController {
             return redirect('/listings/' . $listing->id);
         }
 
-        $allowedFields = ['title', 'description', 'salary', 'tags', 'company', 'address', 'city',
+        $allowedFields = ['title', 'description', 'tech_stack', 'contact', 'tags', 'company', 'address', 'city',
         'state', 'phone', 'email', 'requirements', 'benefits'];
 
         $updatedValues = [];
@@ -216,7 +216,7 @@ class ListingController {
         $updatedValues = array_intersect_key($_POST, array_flip($allowedFields));
         $updatedValues = array_map('sanitize', $updatedValues);
 
-        $requireFields = ['title', 'description', 'salary', 'email','city', 'state'];
+        $requireFields = ['title', 'description', 'contact'];
 
         $errors = [];
         foreach($requireFields as $field) {

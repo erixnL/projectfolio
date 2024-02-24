@@ -35,10 +35,10 @@
           <div class="mb-4">
             <input
               type="text"
-              name="salary"
-              placeholder="Annual Salary"
+              name="tech_stack"
+              placeholder="Tech Stack"
               class="w-full px-4 py-2 border rounded focus:outline-none"
-              value="<?= $listing->salary ?? '' ?>"
+              value="<?= $listing->tech_stack ?? '' ?>"
             />
           </div>
           <div class="mb-4">
@@ -57,6 +57,15 @@
               placeholder="Benefits"
               class="w-full px-4 py-2 border rounded focus:outline-none"
               value="<?= $listing->benefits ?? '' ?>"
+            />
+          </div>
+          <div class="mb-4">
+            <input
+              type="text"
+              name="contact"
+              placeholder="Contact"
+              class="w-full px-4 py-2 border rounded focus:outline-none"
+              value="<?= $listing->contact ?? '' ?>"
             />
           </div>
           <div class="mb-4">

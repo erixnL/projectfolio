@@ -15,7 +15,7 @@
         </div> -->
         <form method="POST" action="/listings">
           <h2 class="text-2xl font-bold mb-6 text-center text-gray-500">
-            Job Info
+            Project Info
           </h2>
           <?= loadPartial('errors', [
             'errors' => $errors ?? []
@@ -24,7 +24,7 @@
             <input
               type="text"
               name="title"
-              placeholder="Job Title"
+              placeholder="Project Title"
               class="w-full px-4 py-2 border rounded focus:outline-none"
               value="<?= $listing['title'] ?? '' ?>"
             />
@@ -32,17 +32,26 @@
           <div class="mb-4">
             <textarea
               name="description"
-              placeholder="Job Description"
+              placeholder="Project Description"
               class="w-full px-4 py-2 border rounded focus:outline-none"
             ><?= $listing['description'] ?? '' ?></textarea>
           </div>
           <div class="mb-4">
             <input
               type="text"
-              name="salary"
-              placeholder="Annual Salary"
+              name="tech_stack"
+              placeholder="Tech Stack"
               class="w-full px-4 py-2 border rounded focus:outline-none"
-              value="<?= $listing['salary'] ?? '' ?>"
+              value="<?= $listing['tech_stack'] ?? '' ?>"
+            />
+          </div>
+          <div class="mb-4">
+            <input
+              type="text"
+              name="contact"
+              placeholder="Contact email or phone number"
+              class="w-full px-4 py-2 border rounded focus:outline-none"
+              value="<?= $listing['contact'] ?? '' ?>"
             />
           </div>
           <div class="mb-4">
@@ -58,7 +67,7 @@
             <input
               type="text"
               name="benefits"
-              placeholder="Benefits"
+              placeholder="What the project offer"
               class="w-full px-4 py-2 border rounded focus:outline-none"
               value="<?= $listing['benefits'] ?? '' ?>"
             />
@@ -73,7 +82,7 @@
             />
           </div>
           <h2 class="text-2xl font-bold mb-6 text-center text-gray-500">
-            Company Info & Location
+            Project Owner Info
           </h2>
           <div class="mb-4">
             <input

@@ -31,9 +31,9 @@
           <?= $listing->description ?>
           </p>
           <ul class="my-4 bg-gray-100 p-4">
-            <li class="mb-2"><strong>Salary:</strong> <?= formatSalary($listing->salary) ?></li>
+            <li class="mb-2"><strong>Tech Stack:</strong> <?= $listing->tech_stack ?></li>
             <li class="mb-2">
-              <strong>Location:</strong> <?= $listing->city ?>, <?= $listing->state ?>
+              <strong>Contact:</strong> <?= $listing->contact ?>
               <!-- <span
                 class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2"
                 >Local</span -->
