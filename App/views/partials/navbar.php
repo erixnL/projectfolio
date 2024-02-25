@@ -6,7 +6,7 @@
     <header class="bg-blue-900 text-white p-4">
       <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-3xl font-semibold">
-          <a href="/">Workopia</a>
+          <a href="/">Projectfolio</a>
         </h1>
         <nav class="space-x-4">
           <?php if(Session::has('user')) :?>
@@ -20,7 +20,7 @@
               <a
               href="/listings/create"
               class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded hover:shadow-md transition duration-300"
-              ><i class="fa fa-edit"></i> Post a Job</a>
+              ><i class="fa fa-edit"></i> Create a project</a>
             </div>
           <?php else: ?>
             <a href="/auth/login" class="text-white hover:underline">Login</a>

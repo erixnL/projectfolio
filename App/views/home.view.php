@@ -10,7 +10,7 @@
     <!-- Job Listings -->
     <section>
       <div class="container mx-auto p-4 mt-4">
-        <div class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">Recent Jobs</div>
+        <div class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">Top Projects</div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <?php foreach($listings as $listing) : ?>
           <!-- Job Listing 1: Software Engineer -->
@@ -21,9 +21,9 @@
               <?= $listing->description ?>
               </p>
               <ul class="my-4 bg-gray-100 p-4 rounded">
-                <li class="mb-2"><strong>Salary:</strong> <?= formatSalary($listing->salary) ?></li>
+                <li class="mb-2"><strong>Tech Stack:</strong> <?= $listing->tech_stack ?></li>
                 <li class="mb-2">
-                  <strong>Location:</strong> <?= $listing->city ?>, <?= $listing->state ?>
+                  <strong>Contact:</strong> <?= $listing->contact ?>
                   <!-- <span
                     class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2"
                     >Local</span
@@ -45,7 +45,7 @@
           <?php endforeach; ?>
         <a href="/listings" class="block text-xl text-center">
           <i class="fa fa-arrow-alt-circle-right"></i>
-          Show All Jobs
+          Show All Projects
         </a>
       </section>
 
